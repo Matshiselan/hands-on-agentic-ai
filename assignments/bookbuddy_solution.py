@@ -3,13 +3,12 @@ import yaml
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 
-# Path to the config directory
 CONFIG_DIR = os.path.join(os.path.dirname(__file__), "config")
 
 @CrewBase
 class BaseBookBuddyCrew:
-    agents_config_path = os.path.join(CONFIG_DIR, "bookbuddy_agents.yaml")
-    tasks_config_path = os.path.join(CONFIG_DIR, "bookbuddy_tasks.yaml")
+    agents_config_path = os.path.join(CONFIG_DIR, "agents.yaml")
+    tasks_config_path = os.path.join(CONFIG_DIR, "tasks.yaml")
 
     def __init__(self, blurb: str):
         self.blurb = blurb
@@ -101,9 +100,7 @@ if __name__ == "__main__":
     print("\nRunning crew with sample blurb:")
     print(f"Blurb: {blurb}\n")
 
-    results = crew.kickoff()
+    crew_output = crew.kickoff(inputs={'blurb': blurb})
 
-    print("\n=== Crew Results ===")
-    for idx, result in enumerate(results, start=1):
-        print(f"Task {idx} output:")
-        print(result.raw)
+    print(f"Raw Output: {crew_output}")
+    
