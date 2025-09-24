@@ -51,8 +51,7 @@ class BaseBookBuddyCrew:
         return Task(
             description=task_cfg["description"],
             agent=self.genre_detector_agent(),
-            expected_output=task_cfg["expected_output"],
-            input_data=lambda _: {"blurb": self.blurb}
+            expected_output=task_cfg["expected_output"]
         )
       
     @task
