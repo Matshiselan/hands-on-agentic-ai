@@ -8,14 +8,14 @@ CONFIG_DIR = os.path.join(os.path.dirname(__file__), "config")
 
 @CrewBase
 class BaseBookBuddyCrew:
-    agents_config_path = os.path.join(CONFIG_DIR, "bookbuddy_agents.yaml")
-    tasks_config_path = os.path.join(CONFIG_DIR, "bookbuddy_tasks.yaml")
+    agents_config_path = os.path.join(CONFIG_DIR, "agents.yaml")
+    tasks_config_path = os.path.join(CONFIG_DIR, "tasks.yaml")
 
     def __init__(self, blurb: str):
         self.blurb = blurb
 
-        # TODO: Load bookbuddy_agents.yaml into self.agents_config
-        # TODO: Load bookbuddy_tasks.yaml into self.tasks_config
+        # TODO: Load agents.yaml into self.agents_config
+        # TODO: Load tasks.yaml into self.tasks_config
 
     # --------------------
     # Agents
@@ -38,7 +38,6 @@ class BaseBookBuddyCrew:
     @task
     def detect_genre_task(self) -> Task:
         # TODO: Create a Task using self.tasks_config["detect_genre_task"]
-        # Make sure to pass {"blurb": self.blurb} as input_data
         pass
 
     @task
@@ -66,4 +65,4 @@ if __name__ == "__main__":
     blurb = "A brave knight sets out on a quest to save the kingdom from a dragon."
 
     # TODO: Instantiate BookBuddyCrew with the blurb
-    # TODO: Run crew.kickoff() and print results
+    # TODO: Run crew.kickoff() with correct input and print results
