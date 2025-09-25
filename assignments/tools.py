@@ -11,15 +11,3 @@ class TitleCaser:
         # Instruction: Split on spaces, capitalize each word, join with spaces, return.
         raise NotImplementedError
 
-class SentimentTool:
-    @staticmethod
-    def label(text: str) -> str:
-        """
-        Return a coarse sentiment label for the text:
-        - 'positive', 'neutral', or 'negative'
-        - Use simple keyword heuristics (e.g., positive words vs negative words).
-        - Must not print; must return just one of the three labels.
-        """
-        # TODO: Implement a minimal rule-based sentiment classifier
-        # Instruction: Lowercase text; score +1 for positive words, -1 for negative words; threshold -> label.
-        raise NotImplementedError
