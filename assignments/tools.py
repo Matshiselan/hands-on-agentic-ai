@@ -1,5 +1,7 @@
+from langchain.tools import tool
+
 class TitleCaser:
-    @staticmethod
+    @tool("Title case a string")
     def enforce(text: str) -> str:
         """
         Enforce Title Case on input text.
