@@ -1,4 +1,4 @@
-from BookBuddy.assignments.tools2 import TitleCaser
+from tools import TitleCaser
 import os
 import yaml
 from crewai import Agent, Crew, Process, Task
@@ -104,13 +104,7 @@ if __name__ == "__main__":
     crew_output = crew.kickoff(inputs={'blurb': blurb})
 
     print("\n=== Crew Results ===")
-    # crew_output is often a list of TaskOutputs; print per-task if available
-    try:
-        for i, out in enumerate(crew_output, 1):
-            print(f"Task {i} raw:", getattr(out, "raw", out))
-    except TypeError:
-        # fallback if the SDK returns a single object
-        print("Raw Output:", crew_output)
+    print(f"Raw Output: {crew_output}")
 
     # Optional: show the tool effect explicitly (TitleCaser on final line)
     try:
