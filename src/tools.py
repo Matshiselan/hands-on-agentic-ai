@@ -20,4 +20,4 @@ credentials = Credentials(
 client = APIClient(credentials)
 project_id = "skills-network"
 
-## TODO: Define the tools for the NutriCoach crew
+## TODO: Define the tools for the NourishBot crew
