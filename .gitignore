@@ -5,3 +5,5 @@ venv/
 *.pyc
 *.pyo
 .gradio/
+#multi_modal_queries.py
+
